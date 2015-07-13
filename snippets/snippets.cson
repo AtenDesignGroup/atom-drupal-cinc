@@ -1,0 +1,21 @@
+'.text.html.php':
+  'cinc-content-type':
+    'prefix': 'cinc-content-type'
+    'body': '''${1:\$${2:var} = }CINC::init('ContentType')
+      ->machine_name('${3:machine_name}')${4:
+      ->set('title_label', '${5:Title}')}
+      ->create_or_update();
+    '''
+  'cinc-field':
+    'prefix': 'field'
+    'body': "CINC::init('${1:Field}')->machine_name('${2:machine_name}')$0"
+  'cinc-field-link':
+    'prefix': 'linkfield'
+    'body': """
+      CINC::init('${1:LinkField}')
+        ->machine_name('${2:machine_name}')
+        ->set_instance('label', '${3:Link}')
+        ->set_instance('settings', array(
+          'title' => '${4:optional}',
+        ))
+        ->create_or_update()$0"""
