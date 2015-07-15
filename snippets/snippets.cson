@@ -1,16 +1,19 @@
 '.text.html.php':
+  'cinc':
+    'prefix': 'cinc'
+    'body': "${1:\$${2:var} = }CINC::init('${3:Thing}')$0"
   'cinc-content-type':
-    'prefix': 'cinc-content-type'
+    'prefix': 'ccontenttype'
     'body': '''${1:\$${2:var} = }CINC::init('ContentType')
       ->machine_name('${3:machine_name}')${4:
       ->set('title_label', '${5:Title}')}
       ->create_or_update();
     '''
   'cinc-field':
-    'prefix': 'field'
+    'prefix': 'cfield'
     'body': "CINC::init('${1:Field}')->machine_name('${2:machine_name}')$0"
   'cinc-field-link':
-    'prefix': 'linkfield'
+    'prefix': 'clinkfield'
     'body': """
       CINC::init('${1:LinkField}')
         ->machine_name('${2:machine_name}')
@@ -19,3 +22,26 @@
           'title' => '${4:optional}',
         ))
         ->create_or_update()$0"""
+  'cinc-field-text':
+    'prefix': 'ctextfield'
+    'body': """
+      CINC::init('${1:TextField}')
+        ->machine_name('${2:machine_name}')
+        ->set_instance('label', '${3:Text}')
+        ->set_instance('settings', array(
+          'text_processing' => 1,
+        ))
+        ->create_or_update()$0"""
+  'cinc-field-entity-reference':
+    'prefix': 'centityref'
+    'body': """
+    CINC::init('${1:EntityReferenceField}')
+      ->machine_name('${2:machine_name}')
+      ->set_instance('label', '${3:Entity Reference}')
+      ->set('settings.handler_settings', array(
+          'target_bundles' => array(
+
+          ),
+        )
+      )
+      ->create_or_update()$0"""
