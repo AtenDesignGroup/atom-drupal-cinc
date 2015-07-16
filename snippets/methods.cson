@@ -1,0 +1,10 @@
+'.text.html.php':
+  'description':
+    'prefix': 'description'
+    'body': "->set_instance('description', '${1:description}')$0"
+  'set':
+    'prefix': 'set'
+    'body': "->set('${1:thing}', ${2:'${3:value}'})$0"
+  'set_instance':
+    'prefix': 'set_instance'
+    'body': "->set_instance('${1:thing}', ${2:'${3:value}'})$0"

@@ -23,14 +23,21 @@
         ))
         ->create_or_update()$0"""
   'cinc-field-text':
-    'prefix': 'ctextfield'
+    'prefix': 'clongtextfield'
     'body': """
-      CINC::init('${1:TextField}')
+      CINC::init('${1:LongTextField}')
         ->machine_name('${2:machine_name}')
         ->set_instance('label', '${3:Text}')
         ->set_instance('settings', array(
           'text_processing' => 1,
         ))
+        ->create_or_update()$0"""
+  'cinc-field-textfield':
+    'prefix': 'ctextfield'
+    'body': """
+      CINC::init('${1:TextField}')
+        ->machine_name('${2:machine_name}')
+        ->set_instance('label', '${3:Text}')
         ->create_or_update()$0"""
   'cinc-field-entity-reference':
     'prefix': 'centityref'
@@ -45,3 +52,10 @@
         )
       )
       ->create_or_update()$0"""
+  'cinc-field-imagefield':
+    'prefix': 'cimagefield'
+    'body': """
+      CINC::init('${1:ImageField}')
+        ->machine_name('${2:machine_name}')
+        ->set_instance('label', '${3:Text}')
+        ->create_or_update()$0"""
