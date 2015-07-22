@@ -1,4 +1,7 @@
 '.text.html.php':
+  'cardinality':
+    'prefix': 'cardinality'
+    'body': "->set('cardinality', ${1:-1})$0"
   'description':
     'prefix': 'description'
     'body': "->set_instance('description', '${1:description}')$0"

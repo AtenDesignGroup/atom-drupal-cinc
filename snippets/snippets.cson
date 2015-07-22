@@ -59,3 +59,28 @@
         ->machine_name('${2:machine_name}')
         ->set_instance('label', '${3:Text}')
         ->create_or_update()$0"""
+  'cinc-beantype':
+    'prefix': 'cbeantype'
+    'body': """
+      \$${1:var} = CINC::init('BeanType')->machine_name('${2:machine_name}')->read()
+        ->set('label', '${3:label}')
+        ->create_or_update();
+    """
+  'cinc-bean':
+    'prefix': 'cbean'
+    'body': """
+      CINC::init('Bean')->machine_name('${1:machine_name}')
+        ->set('type', '${2:bean_type}')
+        ->set('label', '${3:label}')
+        ->set('title', '${4:title}')
+        ->create_or_update();
+    """
+  'cinc-group':
+    'prefix': 'cfieldgroup'
+    'body': """
+      \$${1:group} = CINC::init('FieldGroup')
+        ->machine_name('${2:group_general_info}|${3:node}|{$4:bundle}|${5:form}')
+        ->set('label', '${6:Label}')
+        ->read();
+      \$${1:group}->add_fields(array($7))->create_or_update();$0
+    """
