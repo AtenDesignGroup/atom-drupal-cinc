@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "description": "Drupal snippets for the CINC module",
   "keywords": [
+    "atom"
   ],
-  "repository": "https://github.com/atom/drupal-cinc",
+  "repository": "https://github.com/AtenDesignGroup/atom-drupal-cinc",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
