@@ -39,6 +39,13 @@
         ->machine_name('${2:machine_name}')
         ->set_instance('label', '${3:Text}')
         ->create_or_update()$0"""
+  'cinc-field-boolfield':
+    'prefix': 'cboolfield'
+    'body': """
+      CINC::init('${1:BooleanField}')
+        ->machine_name('${2:machine_name}')
+        ->set_instance('label', '${3:Text}')
+        ->create_or_update()$0"""
   'cinc-field-entity-reference':
     'prefix': 'centityref'
     'body': """
@@ -79,8 +86,16 @@
     'prefix': 'cfieldgroup'
     'body': """
       \$${1:group} = CINC::init('FieldGroup')
-        ->machine_name('${2:group_general_info}|${3:node}|{$4:bundle}|${5:form}')
+        ->machine_name('${2:group_general_info}|${3:node}|${4:bundle}|${5:form}')
         ->set('label', '${6:Label}')
         ->read();
       \$${1:group}->add_fields(array($7))->create_or_update();$0
+    """
+  'cinc-vocabulary':
+    'prefix': 'cvocab'
+    'body': """
+    CINC::init('TaxonomyVocabulary')
+      ->machine_name('${1:machine_name}')
+      ->set('name', '${2:Name}')
+      ->create_or_update();$0
     """

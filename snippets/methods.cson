@@ -11,3 +11,9 @@
   'set_instance':
     'prefix': 'set_instance'
     'body': "->set_instance('${1:thing}', ${2:'${3:value}'})$0"
+  'read_instance_for':
+    'prefix': 'read_instance'
+    'body': "->read_instance_for('${1:node}', '${2:bundle}')$0"
+  'create_or_update':
+    'prefix': 'create_update'
+    'body': "->create_or_update()$0"
