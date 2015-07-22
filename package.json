@@ -1,7 +1,7 @@
 {
   "name": "drupal-cinc",
   "main": "./lib/drupal-cinc",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Drupal snippets for the CINC module",
   "keywords": [
     "atom"
@@ -11,6 +11,5 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
