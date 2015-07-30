@@ -4,10 +4,11 @@
     'body': "${1:\$${2:var} = }CINC::init('${3:Thing}')$0"
   'cinc-content-type':
     'prefix': 'ccontenttype'
-    'body': '''${1:\$${2:var} = }CINC::init('ContentType')
-      ->machine_name('${3:machine_name}')${4:
-      ->set('title_label', '${5:Title}')}
-      ->create_or_update();
+    'body': '''
+      ${1:\$${2:var} = }CINC::init('ContentType')
+        ->machine_name('${3:machine_name}')${4:
+        ->set('title_label', '${5:Title}')}
+        ->create_or_update();
     '''
   'cinc-field':
     'prefix': 'cfield'
@@ -98,4 +99,14 @@
       ->machine_name('${1:machine_name}')
       ->set('name', '${2:Name}')
       ->create_or_update();$0
+    """
+  'cinc-term-reference':
+    'prefix': 'ctermref'
+    'body': """
+    CINC::init('TermReferenceField')
+      ->machine_name('${1:machine_name}')
+      ->set('cardinality', -1)
+      ->allow_vocab(array('${2:vocab}'))
+      ->set_instance('label', '${3:Label}')
+      ->create_or_update()
     """

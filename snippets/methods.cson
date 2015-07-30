@@ -5,6 +5,9 @@
   'description':
     'prefix': 'description'
     'body': "->set_instance('description', '${1:description}')$0"
+  'required':
+    'prefix': 'required'
+    'body': "->set_instance('required', ${1:TRUE})$0"
   'set':
     'prefix': 'set'
     'body': "->set('${1:thing}', ${2:'${3:value}'})$0"
@@ -17,3 +20,6 @@
   'create_or_update':
     'prefix': 'create_update'
     'body': "->create_or_update()$0"
+  'create_or_update_instance_for':
+    'prefix': 'create_update_instance'
+    'body': "->create_or_update_instance_for()$0"
